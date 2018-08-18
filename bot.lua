@@ -191,7 +191,7 @@ function tdcli_update_callback(data)
 					if redis:sismember('botBOT-IDadmin', matches) then
 						return send(msg.chat_id_, msg.id_, "<i>کاربر مورد نظر در حال حاضر مدیر است.</i>")
 					elseif redis:sismember('botBOT-IDmod', msg.sender_user_id_) then
-						return send(msg.chat_id_, msg.id_, "شما دسترسی ندارید.")
+						return send(msg.chat_id_, msg.id_, "شما دسترسی ندارید زور نزنید.")
 					else
 						redis:sadd('botBOT-IDadmin', matches)
 						redis:sadd('botBOT-IDmod', matches)
